@@ -72,14 +72,14 @@ void loop() {
     int seq = get_sequence(IrReceiver.decodedIRData.decodedRawData);
     Serial.println(seq, HEX);
     if (seq) {
-      digitalWrite(E, seq & 0x80 ? HIGH:LOW);
-      digitalWrite(D, seq & 0x40 ? HIGH:LOW);
-      digitalWrite(C, seq & 0x20 ? HIGH:LOW);
-      digitalWrite(DP, seq & 0x10 ? HIGH:LOW);
-      digitalWrite(B, seq & 0x08 ? HIGH:LOW);
-      digitalWrite(A, seq & 0x04 ? HIGH:LOW);
-      digitalWrite(F, seq & 0x02 ? HIGH:LOW);
-      digitalWrite(G, seq & 0x01 ? HIGH:LOW);
+      digitalWrite(E, seq & 0x80 ? HIGH:LOW); // pin 2
+      digitalWrite(D, seq & 0x40 ? HIGH:LOW); // pin 3
+      digitalWrite(C, seq & 0x20 ? HIGH:LOW); // pin 4
+      digitalWrite(DP, seq & 0x10 ? HIGH:LOW); // pin 5
+      digitalWrite(B, seq & 0x08 ? HIGH:LOW); // pin 6
+      digitalWrite(A, seq & 0x04 ? HIGH:LOW); // pin 7
+      digitalWrite(F, seq & 0x02 ? HIGH:LOW); // pin 8
+      digitalWrite(G, seq & 0x01 ? HIGH:LOW); // pin 9
     }
     IrReceiver.resume(); // Enable receiving of the next value
     digitalWrite(RECV_LED, LOW);
